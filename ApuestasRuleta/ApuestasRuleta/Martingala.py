@@ -6,6 +6,8 @@ class Martingala:
 		self.apuesta = 1
 		self.ganadas = 0
 		self.perdidas = 0
+		self.frecRelativa = [0]
+		self.capitalAcumulado = [self.capital]
 
 	def apostarNro(self):
 		return np.random.randint(0, 37)
@@ -21,7 +23,17 @@ class Martingala:
 		if apuesta != 0:
 			self.capital += self.apuesta
 			self.ganadas += 1
+			self.frecRelativa.append(self.ganadas)
+			self.capitalAcumulado.append(self.capital)
 		else:
 			self.capital -= self.apuesta
 			self.perdidas += 1
+			self.frecRelativa.append(self.ganadas)
+			self.capitalAcumulado.append(self.capital)
 		self.apuesta = self.apuesta * 2
+
+	def getFrecRelativa(self):
+		return self.frecRelativa
+
+	def getCapitalAcum(self):
+		return self.capitalAcumulado

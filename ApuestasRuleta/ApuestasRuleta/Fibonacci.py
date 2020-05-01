@@ -7,6 +7,8 @@ class Fibonacci:
 		self.ganadas = 0
 		self.perdidas = 0
 		self.posicionFib = 1
+		self.frecRelativa = [0]
+		self.capitalAcumulado = [self.capital]
 
 	def fib(self, n):
 		a, b = 0, 1
@@ -33,7 +35,17 @@ class Fibonacci:
 			self.capital += self.apuesta
 			self.apuesta = self.fib(self.posicionFib - 2)
 			self.ganadas += 1
+			self.frecRelativa.append(self.ganadas)
+			self.capitalAcumulado.append(self.capital)
 		else:
 			self.capital -= self.apuesta
 			self.apuesta = self.fib(self.posicionFib + 1)
 			self.perdidas += 1
+			self.frecRelativa.append(self.ganadas)
+			self.capitalAcumulado.append(self.capital)
+
+	def getFrecRelativa(self):
+		return self.frecRelativa
+
+	def getCapitalAcum(self):
+		return self.capitalAcumulado

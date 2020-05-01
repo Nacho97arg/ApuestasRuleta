@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8d886ce0-19c9-4bc1-9819-d9781a43d7cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ApuestasRuleta.py</StartupFile>
+    <StartupFile>Main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,8 +22,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ApuestasRuleta.py" />
-    <Compile Include="Ruleta 2.0.py" />
+    <Compile Include="Fibonacci.py" />
+    <Compile Include="Main.py" />
+    <Compile Include="Martingala.py" />
+    <Compile Include="Ruleta.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="CondaEnv|CondaEnv|CondaEnv2" />
