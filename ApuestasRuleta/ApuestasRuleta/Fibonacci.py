@@ -2,7 +2,7 @@ import numpy as np
 
 class Fibonacci:
 	def __init__(self):
-		self.capital = 1000000
+		self.capital = 1000
 		self.apuesta = 1
 		self.ganadas = 0
 		self.perdidas = 0
@@ -33,13 +33,15 @@ class Fibonacci:
 	def resultado(self, apuesta):
 		if apuesta != 0:
 			self.capital += self.apuesta
-			self.apuesta = self.fib(self.posicionFib - 2)
+			self.posicionFib -= 2
+			self.apuesta = self.fib(self.posicionFib)
 			self.ganadas += 1
 			self.frecRelativa.append(self.ganadas)
 			self.capitalAcumulado.append(self.capital)
 		else:
 			self.capital -= self.apuesta
-			self.apuesta = self.fib(self.posicionFib + 1)
+			self.posicionFib += 1
+			self.apuesta = self.fib(self.posicionFib)
 			self.perdidas += 1
 			self.frecRelativa.append(self.ganadas)
 			self.capitalAcumulado.append(self.capital)

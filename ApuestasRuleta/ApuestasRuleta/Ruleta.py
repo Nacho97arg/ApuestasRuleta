@@ -45,7 +45,6 @@ class Ruleta:
 
     def realizarTirada(self):
         self.nro = np.random.randint(0, 37)
-        return self.nro
 
     def apuestaPorNro(self, nro, apuesta):
         retorno = 0
@@ -57,7 +56,7 @@ class Ruleta:
         retorno = 0
         if(self.numeros[self.nro] == color):
             retorno = apuesta*2
-        return retorno
+        return retorno  
     	
 
     def apuestaPorDocena(self, docena, apuesta):

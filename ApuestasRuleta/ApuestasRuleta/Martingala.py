@@ -2,7 +2,7 @@ import numpy as np
 
 class Martingala:
 	def __init__(self):
-		self.capital = 1000000
+		self.capital = 1000
 		self.apuesta = 1
 		self.ganadas = 0
 		self.perdidas = 0
